@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F3FA"
+    tools:context=".Register">
+    <TextView
+        android:layout_marginTop="50dp"
+    android:textSize="18sp"
+android:id="@+id/tv_getstarted"
+        android:text="GETSTARTED"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/imvrate"
+        android:scaleType="fitXY"
+        android:layout_below="@+id/tv_getstarted"
+     android:src="@drawable/reg_topstrip"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@+id/imvrate"
+        android:id="@+id/l1"
+
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        app:hintTextAppearance="@style/TextLabel"
+
+        android:hint="MOBILE NO"
+        android:textColorHint="@color/colorblue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputEditText
+
+            app:backgroundTint="#5964AD"
+
+            android:backgroundTint="@color/colorblue"
+
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/l2"
+android:layout_below="@id/l1"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        app:hintTextAppearance="@style/TextLabel"
+
+        android:hint="MOBILE NO"
+        android:textColorHint="@color/colorblue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputEditText
+
+            app:backgroundTint="#5964AD"
+
+            android:backgroundTint="@color/colorblue"
+
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/l3"
+android:layout_below="@+id/l2"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        app:hintTextAppearance="@style/TextLabel"
+
+        android:hint="MOBILE NO"
+        android:textColorHint="@color/colorblue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputEditText
+
+            app:backgroundTint="#5964AD"
+
+            android:backgroundTint="@color/colorblue"
+
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/l4"
+        android:layout_below="@+id/l3"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        app:hintTextAppearance="@style/TextLabel"
+
+        android:hint="MOBILE NO"
+        android:textColorHint="@color/colorblue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputEditText
+
+            app:backgroundTint="#5964AD"
+
+            android:backgroundTint="@color/colorblue"
+
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/l5"
+        android:layout_below="@+id/l4"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        app:hintTextAppearance="@style/TextLabel"
+
+        android:hint="MOBILE NO"
+        android:textColorHint="@color/colorblue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputEditText
+
+            app:backgroundTint="#5964AD"
+
+            android:backgroundTint="@color/colorblue"
+
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+</RelativeLayout>
