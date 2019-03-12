@@ -90,6 +90,8 @@ android:gravity="center"
 
     </LinearLayout>
         <TextView
+            android:id="@+id/tv_Subjects"
+
             android:layout_marginTop="7dp"
             android:layout_marginLeft="15dp"
             android:textSize="18sp"
@@ -121,6 +123,8 @@ android:gravity="center"
                    android:layout_width="match_parent"
                    android:layout_height="90dp" />
                <TextView
+                   android:id="@+id/tv_Economics"
+                   android:textSize="17sp"
                    android:textColor="#000"
                    android:gravity="center"
                    android:text="Economics"
@@ -138,6 +142,8 @@ android:gravity="center"
                    android:layout_width="match_parent"
                    android:layout_height="90dp" />
                <TextView
+                   android:id="@+id/tv_Geography"
+                   android:textSize="17sp"
                    android:textColor="#000"
                    android:gravity="center"
                    android:text="Geography"
@@ -155,6 +161,8 @@ android:gravity="center"
                    android:layout_width="match_parent"
                    android:layout_height="90dp"/>
                <TextView
+                   android:id="@+id/tv_Chemistry"
+                   android:textSize="17sp"
                    android:textColor="#000"
                    android:gravity="center"
                    android:text="Chemistry"
@@ -180,6 +188,8 @@ android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="90dp" />
                 <TextView
+                    android:id="@+id/tv_Maths"
+android:textSize="17sp"
                     android:textColor="#000"
                     android:gravity="center"
                     android:text="Maths"
@@ -197,6 +207,8 @@ android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="90dp" />
                 <TextView
+                    android:id="@+id/tv_Biology"
+                    android:textSize="17sp"
                     android:textColor="#000"
                     android:gravity="center"
                     android:text="Biology"
@@ -214,6 +226,8 @@ android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="90dp" />
                 <TextView
+                    android:textSize="17sp"
+                    android:id="@+id/tv_English"
                     android:textColor="#000"
                     android:gravity="center"
                     android:text="English"
@@ -231,6 +245,7 @@ android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="40dp">
             <TextView
+                android:id="@+id/tv_mock"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:text="TRY MOCK EXAM TO IMPROVE"

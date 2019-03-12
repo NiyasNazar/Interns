@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
@@ -33,6 +34,8 @@ btn_get_started.setTypeface(buttonfont);
 button_otp.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+        Intent login=new Intent(getApplicationContext(),Dash_board.class);
+        startActivity(login);
 
     }
 });
