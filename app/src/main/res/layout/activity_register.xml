@@ -7,6 +7,9 @@
     android:background="#F4F3FA"
     tools:context=".Register">
     <TextView
+        android:layout_marginLeft="17dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorblue"
         android:layout_marginTop="50dp"
     android:textSize="18sp"
 android:id="@+id/tv_getstarted"
@@ -28,7 +31,7 @@ android:id="@+id/tv_getstarted"
         android:layout_marginRight="70dp"
         app:hintTextAppearance="@style/TextLabel"
 
-        android:hint="MOBILE NO"
+        android:hint="NAME"
         android:textColorHint="@color/colorblue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -73,7 +76,7 @@ android:layout_below="@+id/l2"
         android:layout_marginRight="70dp"
         app:hintTextAppearance="@style/TextLabel"
 
-        android:hint="MOBILE NO"
+        android:hint="EDUCATION"
         android:textColorHint="@color/colorblue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -96,7 +99,7 @@ android:layout_below="@+id/l2"
         android:layout_marginRight="70dp"
         app:hintTextAppearance="@style/TextLabel"
 
-        android:hint="MOBILE NO"
+        android:hint="ADD ( OPTIONAL )"
         android:textColorHint="@color/colorblue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -118,7 +121,7 @@ android:layout_below="@+id/l2"
         android:layout_marginRight="70dp"
         app:hintTextAppearance="@style/TextLabel"
 
-        android:hint="MOBILE NO"
+        android:hint="EMAIL ( OPTIONAL )"
         android:textColorHint="@color/colorblue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -133,4 +136,27 @@ android:layout_below="@+id/l2"
             android:layout_height="wrap_content" />
 
     </android.support.design.widget.TextInputLayout>
+    <ImageView
+        android:layout_marginLeft="150dp"
+        android:layout_below="@id/l5"
+       android:src="@drawable/reg_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+
+        android:layout_alignParentBottom="true"
+        android:alpha="0.9"
+        android:background="@color/colorblue"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:id="@+id/tv_submit"
+            android:textColor="#FFFFFF"
+            android:text="SUBMIT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </RelativeLayout>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:fillViewport="true"
+    android:background="#F4F3FA"
+    android:layout_height="fill_parent"
+    tools:context=".Dash_board">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/colorblue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@drawable/topbg_pattern"
+    android:layout_width="match_parent"
+
+    android:layout_height="220dp">
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp">
+        <ImageView
+
+          android:src="@drawable/sidemenu"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+<EditText
+    android:paddingLeft="15dp"
+
+    android:drawableLeft="@drawable/_search"
+    android:background="@drawable/bg_for_search"
+    android:hint="Search Course..."
+   android:textColorHint="#FFF"
+   android:layout_marginLeft="70dp"
+    android:layout_marginRight="70dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="45dp" />
+    <TextView
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+android:gravity="center"
+        android:textColor="#FFF"
+        android:text="Dummy Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="15sp"
+
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:text="Dummy Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/capsule_white_bg"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:text="LEARN MORE"
+        android:textColor="@color/colorblue"
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+
+</LinearLayout>
+
+    </LinearLayout>
+        <TextView
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="18sp"
+            android:text="SUBJECTS"
+            android:textColor="@color/colorblue"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/imvrate"
+            android:scaleType="fitXY"
+
+            android:src="@drawable/reg_topstrip"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+       <LinearLayout
+           android:layout_margin="10dp"
+           android:layout_weight="1"
+           android:orientation="horizontal"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <LinearLayout
+               android:layout_weight="1"
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:background="@drawable/sub1"
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp" />
+               <TextView
+                   android:textColor="#000"
+                   android:gravity="center"
+                   android:text="Economics"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_weight="1"
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:background="@drawable/sub2"
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp" />
+               <TextView
+                   android:textColor="#000"
+                   android:gravity="center"
+                   android:text="Geography"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_weight="1"
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:background="@drawable/sub3"
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"/>
+               <TextView
+                   android:textColor="#000"
+                   android:gravity="center"
+                   android:text="Chemistry"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+           </LinearLayout>
+
+       </LinearLayout>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:background="@drawable/sub4"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp" />
+                <TextView
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:text="Maths"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:background="@drawable/sub5"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp" />
+                <TextView
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:text="Biology"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:background="@drawable/sub6"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp" />
+                <TextView
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:text="English"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:background="#FD9163"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="TRY MOCK EXAM TO IMPROVE"
+                android:layout_width="125dp"
+                android:textColor="#FFF"
+                android:layout_height="match_parent" />
+            <Button
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="START"
+                android:background="@drawable/capsule_white_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
