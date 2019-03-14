@@ -26,9 +26,9 @@ android:src="@drawable/login_logo"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <android.support.design.widget.TextInputEditText
-
+android:id="@+id/ed_mob"
         app:backgroundTint="#5964AD"
-
+android:singleLine="true"
         android:backgroundTint="@color/colorblue"
 
         android:paddingLeft="10dp"
@@ -37,6 +37,7 @@ android:src="@drawable/login_logo"
 
 </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
+
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
         app:hintTextAppearance="@style/TextLabel"
@@ -50,7 +51,7 @@ android:src="@drawable/login_logo"
         <android.support.design.widget.TextInputEditText
 android:backgroundTint="@color/colorblue"
             android:paddingLeft="10dp"
-
+android:id="@+id/ed_otp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </android.support.design.widget.TextInputLayout>
@@ -72,12 +73,12 @@ android:id="@+id/btn_otp"
         android:id="@+id/frame_ll"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="200dp">
     <ImageView
 
      android:background="@drawable/login_bottom"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="200dp" />
         <Button
             android:alpha="0.9"
             android:textColor="#FFFFFF"

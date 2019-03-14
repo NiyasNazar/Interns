@@ -1,4 +1,4 @@
-package remind.edu.myapplication.Course_List;
+package remind.edu.myapplication.Select_edu;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Response_course {
-    @SerializedName("Course")
+    @SerializedName("course")
     @Expose
     private List<Course> course = null;
 
@@ -19,3 +19,4 @@ public class Response_course {
     }
 
 }
+
