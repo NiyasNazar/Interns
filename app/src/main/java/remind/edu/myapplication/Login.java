@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import remind.edu.myapplication.Generate_otp.Response_gen_otp;
+import remind.edu.myapplication.Generate_otp.Response_validate_otp;
 import remind.edu.myapplication.Web_service.ApiClient;
 import remind.edu.myapplication.Web_service.Apiservice;
 import retrofit2.Call;
@@ -43,17 +44,19 @@ ProgressDialog pdialog;
         TextInputLayout   otpTextObj = (TextInputLayout)    findViewById(R.id.ILuserotp);
         mMob=(TextInputEditText)findViewById(R.id.ed_mob);
         mOtp=(TextInputEditText)findViewById(R.id.ed_otp);
-        mMob .addTextChangedListener(new TextWatcher() {
+        mOtp .addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) { }
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
             @Override
             public void afterTextChanged(Editable s) {
-                String number = s.toString();
-                if(number != null && number.matches("[0-9]{10}")){
+                String number = mMob.getText().toString();
+                String otp = mOtp.getText().toString();
+
+                if(!number.equals("")&&number != null && number.matches("[0-9]{10}")&& otp.matches("[0-9]{4}")){
 pdialog.show();
-                    Checknumbervalidation(number);
+                   Validate_otp(number,otp);
                 }
                 //do what you need to do for valid input
      else{
@@ -84,8 +87,12 @@ btn_get_started.setTypeface(buttonfont);
 button_otp.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent login=new Intent(getApplicationContext(),Dash_board.class);
-        startActivity(login);
+        String mobilenum=mMob.getText().toString();
+        String otp=mOtp.getText().toString();
+        Checknumbervalidation(mobilenum);
+       // Validate_otp(mobilenum,otp);
+       // Intent login=new Intent(getApplicationContext(),Dash_board.class);
+        //startActivity(login);
 
     }
 });
@@ -100,6 +107,33 @@ btn_get_started.setOnClickListener(new View.OnClickListener() {
 
 
 
+    }
+
+    private void Validate_otp(String mobile,String otp) {
+        Call<Response_validate_otp>call=apiservice.verify_otp(mobile,otp);
+        call.enqueue(new Callback<Response_validate_otp>() {
+            @Override
+            public void onResponse(Call<Response_validate_otp> call, Response<Response_validate_otp> response) {
+                Toast.makeText(getApplicationContext(),response.body().getStatus(),Toast.LENGTH_SHORT).show();
+                pdialog.dismiss();
+                if (response.body().getStatus().equals("success")) {
+
+                    mMob.setText("");
+                    mOtp.setText("");
+                    Intent login = new Intent(getApplicationContext(), Dash_board.class);
+                    startActivity(login);
+                }else {
+
+                    mOtp.setError("OTP Mismatch");
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Response_validate_otp> call, Throwable t) {
+
+            }
+        });
     }
 
     private void Checknumbervalidation(String number) {

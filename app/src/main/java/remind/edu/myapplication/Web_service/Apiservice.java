@@ -1,5 +1,6 @@
 package remind.edu.myapplication.Web_service;
 
+import remind.edu.myapplication.Generate_otp.Response_validate_otp;
 import remind.edu.myapplication.Response_register;
 import remind.edu.myapplication.Select_edu.Response_course;
 import remind.edu.myapplication.Generate_otp.Response_gen_otp;
@@ -14,7 +15,9 @@ public interface Apiservice {
     @FormUrlEncoded
     @POST("user_login.php")
     Call<Response_gen_otp> generate_Otp(@Field("mobileno") String mobile);
-
+    @FormUrlEncoded
+    @POST("user_validate.php")
+    Call<Response_validate_otp> verify_otp(@Field("mobileno") String mobile, @Field("otp") String otp);
 
     @GET("list_course.php")
     Call<Response_course> course_list();
