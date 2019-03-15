@@ -1,5 +1,6 @@
 package remind.edu.myapplication;
 
+import android.app.ProgressDialog;
 import android.graphics.Typeface;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
@@ -20,12 +21,16 @@ public class Register extends AppCompatActivity {
     TextView tvstarted,tvsubmit;
     TextInputEditText mName,mMob,mEmail,maddress;
     LinearLayout submitlayout;
+    ProgressDialog progressDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        progressDialog=new ProgressDialog(Register.this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Please wait...");
         TextInputLayout usernameTextObj = (TextInputLayout)    findViewById(R.id.l1);
         TextInputLayout  mobiletObj = (TextInputLayout)    findViewById(R.id.l2);
         TextInputLayout   educationObj = (TextInputLayout)    findViewById(R.id.l3);
@@ -58,6 +63,7 @@ submitlayout=(LinearLayout)findViewById(R.id.btn_submit);
         submitlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.show();
                 String name=mName.getText().toString();
                 String mob=mMob.getText().toString();
                 String email=mEmail.getText().toString();
@@ -75,12 +81,14 @@ submitlayout=(LinearLayout)findViewById(R.id.btn_submit);
         call.enqueue(new Callback<Response_register>() {
             @Override
             public void onResponse(Call<Response_register> call, Response<Response_register> response) {
+                progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(),response.body().getStatus(),Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onFailure(Call<Response_register> call, Throwable t) {
+                progressDialog.dismiss();
 
             }
         });

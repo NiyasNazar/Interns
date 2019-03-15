@@ -20,6 +20,9 @@ import android.widget.Toast;
 
 import remind.edu.myapplication.Generate_otp.Response_gen_otp;
 import remind.edu.myapplication.Generate_otp.Response_validate_otp;
+import remind.edu.myapplication.Select_edu.Choose_Qualification;
+import remind.edu.myapplication.Splash.Splash_screen;
+import remind.edu.myapplication.Utils.MyPreferences;
 import remind.edu.myapplication.Web_service.ApiClient;
 import remind.edu.myapplication.Web_service.Apiservice;
 import retrofit2.Call;
@@ -32,10 +35,12 @@ Button button_otp,btn_get_started;
 TextInputEditText mMob,mOtp;
 Apiservice apiservice;
 ProgressDialog pdialog;
+  boolean isFirstTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        isFirstTime = MyPreferences.isFirst(Login.this);
         pdialog=new ProgressDialog(Login.this);
         pdialog.setCancelable(false);
         pdialog.setMessage("Please Wait...");
@@ -120,8 +125,13 @@ btn_get_started.setOnClickListener(new View.OnClickListener() {
 
                     mMob.setText("");
                     mOtp.setText("");
-                    Intent login = new Intent(getApplicationContext(), Dash_board.class);
-                    startActivity(login);
+                    if (isFirstTime){
+                        Intent i = new Intent(Login.this, Choose_Qualification.class);
+                        startActivity(i);
+                    }else {
+                        Intent login = new Intent(getApplicationContext(), Dash_board.class);
+                        startActivity(login);
+                    }
                 }else {
 
                     mOtp.setError("OTP Mismatch");

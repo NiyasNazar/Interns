@@ -12,18 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Select_edu.Choose_Qualification"></activity>
-        <activity android:name=".Login">
+        <activity android:name=".Select_edu.Choose_Qualification" />
+        <activity android:name=".Login"></activity>
+        <activity android:name=".Register" />
+        <activity android:name=".Dash_board" />
+        <activity android:name=".Main_category.Main_category" />
+        <activity android:name=".Splash.Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register" />
-        <activity android:name=".Dash_board" />
-        <activity android:name=".Main_category.Main_category" />
-        <activity android:name=".Splash.Splash_screen"></activity>
+        <activity android:name=".Sub_category_.Sub_category"></activity>
     </application>
 
 </manifest>

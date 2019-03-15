@@ -49,6 +49,9 @@ android:singleLine="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <android.support.design.widget.TextInputEditText
+            android:maxLength="4"
+            android:digits="0123456789"
+            android:singleLine="true"
 android:backgroundTint="@color/colorblue"
             android:paddingLeft="10dp"
 android:id="@+id/ed_otp"
