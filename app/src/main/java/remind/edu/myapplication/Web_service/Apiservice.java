@@ -1,9 +1,12 @@
 package remind.edu.myapplication.Web_service;
 
+import com.google.gson.JsonObject;
+
 import remind.edu.myapplication.Generate_otp.Response_validate_otp;
 import remind.edu.myapplication.Response_register;
 import remind.edu.myapplication.Select_edu.Response_course;
 import remind.edu.myapplication.Generate_otp.Response_gen_otp;
+import remind.edu.myapplication.Sub_details.Response_sub_details;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -33,4 +36,8 @@ public interface Apiservice {
                                        @Field("addr") String addr,
                                        @Field("course") String course,
                                        @Field("device_id") String device_id);
+
+    @GET("list_file.php?")
+    Call<JsonObject> subdetails(@Query("subject") String subject);
+
 }

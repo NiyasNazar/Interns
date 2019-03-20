@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="tablayout.example.com.tablayout.MainActivity">
+    <RelativeLayout
+android:background="@drawable/details_top_bg"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+<RelativeLayout
+android:background="@drawable/topbg_pattern1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<TextView
+    android:layout_marginTop="25dp"
+   android:gravity="center"
+    android:text="Thidm "
+    android:textColor="#FFF"
+    android:id="@+id/tv_subj_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_centerInParent="true"
+        android:layout_below="@id/tv_subj_name"
+    android:src= "@drawable/sub1"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp" />
+   
+
+    <android.support.design.widget.TabLayout
+        android:layout_alignParentBottom="true"
+
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+    </android.support.design.widget.TabLayout>
+
+
+
+    </RelativeLayout>
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager
+
+
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        tools:layout_editor_absoluteX="8dp" />
+</LinearLayout>
