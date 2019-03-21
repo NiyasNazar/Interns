@@ -36,8 +36,8 @@ public class Subject_details extends AppCompatActivity {
         setContentView(R.layout.activity_subject_details);
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         viewPager=(ViewPager)findViewById(R.id.viewPager);
-        tabLayout.addTab(tabLayout.newTab().setText("Home"));
-        tabLayout.addTab(tabLayout.newTab().setText("Sport"));
+        tabLayout.addTab(tabLayout.newTab().setText("DOCUMENTS"));
+        tabLayout.addTab(tabLayout.newTab().setText("VIDEOS"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         final MyAdapter adapter = new MyAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);

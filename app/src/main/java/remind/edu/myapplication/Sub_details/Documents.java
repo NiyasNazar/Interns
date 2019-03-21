@@ -99,6 +99,8 @@ fetchfromserver();
                         docList.add(documentss);
 
                     }
+                    Adapter_list_docs adapter_list_docs=new Adapter_list_docs(docList,getActivity());
+                    recyclerview.setAdapter(adapter_list_docs);
 
 
 

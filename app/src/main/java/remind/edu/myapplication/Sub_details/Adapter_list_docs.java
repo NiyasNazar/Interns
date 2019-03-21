@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ import remind.edu.myapplication.Select_edu.Course;
 
 public class Adapter_list_docs extends RecyclerView.Adapter<Adapter_list_docs.MyViewHolder> {
 
-    private List<Course> courseList;
+    private List<Documentss> courseList;
     Context context;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -33,11 +34,11 @@ public class Adapter_list_docs extends RecyclerView.Adapter<Adapter_list_docs.My
             title.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     int pos=getAdapterPosition();
-                    String id=courseList.get(pos).getCourseId();
-                    Intent is=new Intent(context, Main_category.class);
-                    is.putExtra("id",id);
-                    context.startActivity(is);
+                    String id=courseList.get(pos).getUrl();
+
+                    //context.startActivity(is);
                 }
             });
 
@@ -45,7 +46,7 @@ public class Adapter_list_docs extends RecyclerView.Adapter<Adapter_list_docs.My
     }
 
 
-    public Adapter_list_docs( List<Course> courseList,Context context) {
+    public Adapter_list_docs( List<Documentss> courseList,Context context) {
         this.courseList = courseList;
         this.context=context;
     }
@@ -53,15 +54,15 @@ public class Adapter_list_docs extends RecyclerView.Adapter<Adapter_list_docs.My
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.cardrow_qualification, parent, false);
+                .inflate(R.layout.layout_item_sub, parent, false);
 
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Course movie = courseList.get(position);
-        holder.title.setText(movie.getCourseName());
+        Documentss movie = courseList.get(position);
+        holder.title.setText(movie.getTitle());
 
 
     }
