@@ -3,7 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Sub_details.Documents">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+
+                android:cursorVisible="false"
+                android:textColorHint="@color/colorblue"
+android:drawableLeft="@drawable/ic_action_details_search"
+                android:textColor="@color/colorblue"
+                app:backgroundTint="#5964AD"
+                android:id="@+id/ed_search"
+                android:drawablePadding="10dp"
+                android:backgroundTint="@color/colorblue"
+android:hint="Search Topics"
+                android:paddingBottom="20dp"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
 
     <!-- TODO: Update blank fragment layout -->
    <android.support.v7.widget.RecyclerView
@@ -12,5 +36,5 @@
        android:layout_height="match_parent">
 
    </android.support.v7.widget.RecyclerView>
-
+    </LinearLayout>
 </FrameLayout>

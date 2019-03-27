@@ -2,6 +2,7 @@ package remind.edu.myapplication.Web_service;
 
 import com.google.gson.JsonObject;
 
+import remind.edu.myapplication.Course_List.Response_sublist;
 import remind.edu.myapplication.Generate_otp.Response_validate_otp;
 import remind.edu.myapplication.Response_register;
 import remind.edu.myapplication.Select_edu.Response_course;
@@ -39,5 +40,9 @@ public interface Apiservice {
 
     @GET("list_file.php?")
     Call<JsonObject> subdetails(@Query("subject") String subject);
+
+    @GET("list_subject.php")
+    Call<Response_sublist> sublist(@Query("courseid") String courseid);
+
 
 }

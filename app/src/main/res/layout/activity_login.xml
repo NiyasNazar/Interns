@@ -78,8 +78,8 @@ android:id="@+id/btn_otp"
         android:layout_width="match_parent"
         android:layout_height="200dp">
     <ImageView
-
-     android:background="@drawable/login_bottom"
+android:scaleType="fitXY"
+     android:src="@drawable/login_bottom"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
         <Button

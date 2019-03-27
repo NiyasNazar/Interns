@@ -17,6 +17,10 @@ android {
         }
     }
 }
+repositories {
+    maven { url "http://dl.bintray.com/lukaville/maven" }
+}
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -31,9 +35,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
-
+    implementation 'com.nbsp:library:1.1'
+    implementation 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
+    implementation 'es.voghdev.pdfviewpager:library:1.0.6'
     implementation 'com.google.code.gson:gson:2.7'
     implementation files('libs/simpleftp.jar')
     implementation files('libs/commons-net-3.6.jar')
     implementation files('libs/ftp4j-1.7.2.jar')
+    implementation project(':mylibrary')
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
 }

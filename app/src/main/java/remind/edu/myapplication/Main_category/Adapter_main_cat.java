@@ -3,6 +3,7 @@ package remind.edu.myapplication.Main_category;
 
         import android.content.Context;
         import android.content.Intent;
+        import android.graphics.Typeface;
         import android.support.design.widget.TextInputLayout;
         import android.support.v7.widget.RecyclerView;
         import android.view.LayoutInflater;
@@ -29,6 +30,8 @@ public class Adapter_main_cat extends RecyclerView.Adapter<Adapter_main_cat.MyVi
             super(view);
             title = (EditText) view.findViewById(R.id.ed_qualification_nanme);
             title.setFocusable(false);
+            Typeface hintfont = Typeface.createFromAsset(context.getAssets(), "fonts/Melbourne_reg.otf");
+title.setTypeface(hintfont);
             titlelayout = (TextInputLayout) view.findViewById(R.id.l4);
             title.setOnClickListener(new View.OnClickListener() {
                 @Override

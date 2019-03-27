@@ -26,7 +26,7 @@
         <ImageView
             android:id="@+id/imv_topstrip"
             android:layout_below="@id/tv_select_edu"
-            android:background="@drawable/reg_topstrip"
+            android:src="@drawable/reg_topstrip"
             android:layout_width="wrap_content"
             android:layout_height="35dp" />
         <LinearLayout
@@ -46,13 +46,14 @@
         </LinearLayout>
 
         <ImageView
+            android:scaleType="fitXY"
             android:layout_width="wrap_content"
             android:layout_height="142dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="2dp"
-            android:layout_marginLeft="45dp"
+            android:layout_marginLeft="75dp"
             android:layout_marginRight="2dp"
             android:layout_marginTop="35dp"
-            android:background="@drawable/edu_bottom_img" />
+            android:src="@drawable/edu_bottom_img" />
     </RelativeLayout>
 </ScrollView>

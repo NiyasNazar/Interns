@@ -64,18 +64,18 @@ public class Videos extends Fragment {
                     Log.i("new",new Gson().toJson(response.body()));
 
                     JSONArray dataArray = jsonObject.getJSONArray("videos");
-                    List<Documentss> docList = new ArrayList<Documentss>();
-                    Documentss documentss;
+                    List<Vide> docList = new ArrayList<Vide>();
+                    Vide vide;
                     for (int i=0; i<dataArray.length(); i++){
                         JSONObject dataObject = dataArray.getJSONObject(i);
-                        documentss = new Documentss();
-                        documentss.setTitle(dataObject.getString("title"));
-                        documentss.setFileId(dataObject.getString("file_id"));
-                        documentss.setUrl(dataObject.getString("url"));
-                        docList.add(documentss);
+                        vide = new Vide();
+                        vide.setTitle(dataObject.getString("title"));
+                        vide.setFileId(dataObject.getString("file_id"));
+                        vide.setUrl(dataObject.getString("url"));
+                        docList.add(vide);
 
                     }
-                    Adapter_list_docs adapter_list_docs=new Adapter_list_docs(docList,getActivity());
+                    Adapter_list_vids adapter_list_docs=new Adapter_list_vids(docList,getActivity());
                     recyclerview.setAdapter(adapter_list_docs);
 
 

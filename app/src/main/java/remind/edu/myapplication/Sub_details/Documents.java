@@ -4,6 +4,7 @@ package remind.edu.myapplication.Sub_details;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -48,14 +50,7 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class Documents extends Fragment {
-    String hostName = "starboard.cochinshipyard.com";
-    String username = "starboardadmin";
-    String password = "W1reFram3#2O17";
-    String location = "drawable://" + R.drawable.sub3;
-    FTPClient ftp = null;
-    String selectedPath, extension;
-    InputStream in = null;
-    private String selectedVideoPath;
+
     RecyclerView recyclerview;
     public Documents() {
         // Required empty public constructor
@@ -68,6 +63,9 @@ public class Documents extends Fragment {
         // Inflate the layout for this fragment
 
       View view= inflater.inflate(R.layout.fragment_documents, container, false);
+      EditText ed_search_view=(EditText)view.findViewById(R.id.ed_search);
+        Typeface hintfont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Melbourne_reg.otf");
+        ed_search_view.setTypeface(hintfont);
       recyclerview=(RecyclerView)view.findViewById(R.id.recv_documents);
       recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
 fetchfromserver();
