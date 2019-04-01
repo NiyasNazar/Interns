@@ -39,7 +39,9 @@ public class Adapter_qualification extends RecyclerView.Adapter<Adapter_qualific
                     String id=courseList.get(pos).getCourseId();
                     Intent is=new Intent(context, Main_category.class);
                     is.putExtra("id",id);
+                    is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(is);
+
                 }
             });
 

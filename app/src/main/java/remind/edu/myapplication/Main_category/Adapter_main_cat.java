@@ -40,6 +40,7 @@ title.setTypeface(hintfont);
                     String id=courseList.get(pos).getCourseId();
                     Intent is=new Intent(context, Sub_category.class);
                     is.putExtra("id",id);
+                    is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(is);
                 }
             });

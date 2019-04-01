@@ -40,6 +40,7 @@ public class Adapter_sub_cat extends RecyclerView.Adapter<Adapter_sub_cat.MyView
                     int pos=getAdapterPosition();
                     String id=courseList.get(pos).getCourseId();
                     Intent is=new Intent(context, Dash_board.class);
+                    is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     is.putExtra("id",id);
                     context.startActivity(is);
                 }

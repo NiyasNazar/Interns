@@ -42,6 +42,7 @@ public class Adapter_list_docs extends RecyclerView.Adapter<Adapter_list_docs.My
                     String id=courseList.get(pos).getUrl();
 Intent is =new Intent(context,View_DOCS.class);
                     is.putExtra("urlpdf",id);
+                    is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 context.startActivity(is);
 
                     //context.startActivity(is);

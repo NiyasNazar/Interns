@@ -76,6 +76,7 @@ pdialog.show();
 
 
 
+
         Typeface   hintfont = Typeface.createFromAsset(getAssets(), "fonts/Melbourne_reg.otf");
         usernameTextObj .setTypeface(hintfont);
         otpTextObj.setTypeface(hintfont);
