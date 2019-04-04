@@ -17,29 +17,31 @@
         <activity android:name=".Select_edu.Choose_Qualification" />
         <activity android:name=".Login" />
         <activity android:name=".Register" />
-        <activity android:name=".Dash_board">
+        <activity android:name=".Dash_board" >
 
         </activity>
+
+
         <activity android:name=".Main_category.Main_category" />
-        <activity android:name=".Splash.Splash_screen" >
+        <activity android:name=".Splash.Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".Sub_category_.Sub_category" />
-        <activity android:name=".Sub_details.Subject_details"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
-           <!-- <intent-filter>
+        <activity
+            android:name=".Sub_details.Subject_details"
+            android:windowSoftInputMode="stateHidden" />
+        <!--
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
+        -->
         <activity android:name=".Sub_details.View_DOCS">
 
             <!--
@@ -50,7 +52,10 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".Sub_details.Video_Views"></activity>
+        <activity android:name=".Sub_details.Video_Views" />
+        <activity android:name=".Exams.Mock_questions" />
+        <activity android:name=".Exams.Results_page" />
+        <activity android:name=".Exams.List_quiz_subjects"></activity>
     </application>
 
 </manifest>

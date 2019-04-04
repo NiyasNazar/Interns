@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#F4F3FA"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Exams.List_quiz_subjects">
+    <LinearLayout
+        android:background="@drawable/gradient_bg"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <TextView
+            android:textSize="28sp"
+            android:id="@+id/tv_mock_exams"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Mock Exams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="15dp"
+        android:id="@+id/recv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

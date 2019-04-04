@@ -131,6 +131,7 @@ android:layout_alignParentBottom="true"
                 android:textColor="#FFF"
                 android:layout_height="match_parent" />
             <Button
+                android:id="@+id/btn_mock_start"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
                 android:text="START"

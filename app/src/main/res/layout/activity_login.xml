@@ -29,6 +29,8 @@ android:src="@drawable/login_logo"
 android:id="@+id/ed_mob"
         app:backgroundTint="#5964AD"
 android:singleLine="true"
+        android:inputType="number"
+
         android:backgroundTint="@color/colorblue"
 
         android:paddingLeft="10dp"
@@ -50,6 +52,7 @@ android:singleLine="true"
         android:layout_height="wrap_content">
         <android.support.design.widget.TextInputEditText
             android:maxLength="4"
+            android:inputType="number"
             android:digits="0123456789"
             android:singleLine="true"
 android:backgroundTint="@color/colorblue"

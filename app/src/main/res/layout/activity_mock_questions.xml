@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Exams.Mock_questions">
+    <LinearLayout
+        android:background="@drawable/home_top_bg"
+        android:id="@+id/rr"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/topbg_pattern"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+        <TextView
+            android:layout_marginTop="25dp"
+            android:id="@+id/view_question_number"
+          android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:text="QUESTION"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="#FFF"></View>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/view_question"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:text="QUESTION"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+
+            android:layout_marginBottom="18dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/capsule_white_bg"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="110dp"
+            android:text="IMAGE"
+            android:textColor="@color/colorblue"
+            android:layout_width="match_parent"
+            android:layout_height="38dp" />
+    </LinearLayout>
+    </LinearLayout>
+    <RadioGroup
+        android:layout_below="@+id/rr"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RGroup">
+    <RadioButton
+        android:layout_marginTop="10dp"
+        android:textSize="17sp"
+android:buttonTint="@color/colorblue"
+        android:textColor="@color/colorblue"
+        android:id="@+id/radio_btn1"
+        android:layout_marginLeft="25dp"
+        android:text="save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_below="@id/radio_btn1"
+
+        android:layout_marginTop="10dp"
+        android:background="@color/colorblue"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"></View>
+    <RadioButton
+        android:id="@+id/radio_btn2"
+        android:textColor="@color/colorblue"
+        android:textSize="17sp"
+        android:buttonTint="@color/colorblue"
+
+        android:layout_below="@id/radio_btn1"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:text="save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_below="@id/radio_btn2"
+
+        android:layout_marginTop="10dp"
+        android:background="@color/colorblue"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"></View>
+    <RadioButton
+        android:textColor="@color/colorblue"
+        android:textSize="17sp"
+        android:buttonTint="@color/colorblue"
+
+        android:id="@+id/radio_btn3"
+android:layout_below="@id/radio_btn2"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:text="save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_below="@id/radio_btn3"
+
+        android:layout_marginTop="10dp"
+        android:background="@color/colorblue"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"></View>
+    <RadioButton
+        android:textColor="@color/colorblue"
+android:textSize="17sp"
+        android:id="@+id/radio_btn4"
+android:layout_below="@id/radio_btn3"
+        android:buttonTint="@color/colorblue"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:text="save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_below="@id/radio_btn3"
+
+        android:layout_marginTop="10dp"
+        android:background="@color/colorblue"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"></View>
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/llsubmit"
+        android:background="#FD9163"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:text="SUBMIT"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>
