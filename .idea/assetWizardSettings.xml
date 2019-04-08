@@ -35,8 +35,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\AbaSoft\Downloads\5\5\details_search_icon.png" />
-                                      <entry key="outputName" value="ic_action_details_search" />
+                                      <entry key="imageAsset" value="C:\Users\AbaSoft\Downloads\assets\exm_icon_3.png" />
+                                      <entry key="outputName" value="ic_action_qiconthree" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="5964ad" />
                                     </map>
