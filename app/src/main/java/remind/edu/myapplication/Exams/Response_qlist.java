@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Response_qlist {
-    @SerializedName("Exams")
+    @SerializedName("exams")
     @Expose
     private List<Exam> exams = null;
 

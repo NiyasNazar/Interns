@@ -37,10 +37,13 @@ public class Mock_questions extends AppCompatActivity {
 LinearLayout submit;
     ProgressDialog progressDialog;
     int totalmark,initialmark=0;
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mock_questions);
+        id=getIntent().getStringExtra("id");
+        Log.i("idxx",id);
         progressDialog=new ProgressDialog(Mock_questions.this);
         progressDialog.setMessage("please Wait");
         final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.RGroup);
@@ -94,11 +97,11 @@ rd1.setTypeface(hintfont);
                     }
 
 
-                    Toast.makeText(getApplicationContext(), "arraysize" + arraysize, Toast.LENGTH_SHORT).show();
+
                     if (i < arraysize) {
 
                         i++;
-                        Toast.makeText(getApplicationContext(), "arraysizeinc" + i, Toast.LENGTH_SHORT).show();
+
 
                         Load();
 
@@ -143,7 +146,7 @@ rd1.setTypeface(hintfont);
 
     private void Load() {
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
-        Call<Response_quiz_questions>call=apiservice.questions();
+        Call<Response_quiz_questions>call=apiservice.questions("exm_20122");
         call.enqueue(new Callback<Response_quiz_questions>() {
             @Override
             public void onResponse(Call<Response_quiz_questions> call, Response<Response_quiz_questions> response) {

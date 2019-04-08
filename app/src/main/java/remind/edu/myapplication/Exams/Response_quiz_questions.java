@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Response_quiz_questions {
-    @SerializedName("Questions")
+    @SerializedName("questions")
     @Expose
     private List<Question> questions = null;
 
@@ -17,4 +17,5 @@ public class Response_quiz_questions {
     public void setQuestions(List<Question> questions) {
         this.questions = questions;
     }
+
 }

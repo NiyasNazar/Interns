@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -26,27 +27,35 @@ public class Adapter_list_quizsub extends RecyclerView.Adapter<Adapter_list_quiz
     Context context;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title,quizqnumbers,qdetails;
+        public TextView title,quizqnumbers,qdetails,qnum,qmarks,qtime;
         TextInputLayout titlelayout;
+        LinearLayout data;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.tv_quizsubname);
-            quizqnumbers=(TextView)view.findViewById(R.id.tv_quizqnum);
             qdetails=(TextView)view.findViewById(R.id.tv_qdetails);
+            qnum=(TextView)view.findViewById(R.id.tv_qnumber);
+            qmarks=(TextView)view.findViewById(R.id.tv_marks);
+            qtime=(TextView)view.findViewById(R.id.tv_times);
+            data=(LinearLayout) view.findViewById(R.id.lll);
 
             Typeface hintfont = Typeface.createFromAsset(context.getAssets(), "fonts/Melbourne_reg.otf");
 title.setTypeface(hintfont);
-quizqnumbers.setTypeface(hintfont);
+//quizqnumbers.setTypeface(hintfont);
 qdetails.setTypeface(hintfont);
+    qnum.setTypeface(hintfont);
+            qmarks.setTypeface(hintfont);
+            qtime.setTypeface(hintfont);
 
-            title.setOnClickListener(new View.OnClickListener() {
+
+            data.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                 /* int pos=getAdapterPosition();
-                    String id=courseList.get(pos).getCourseId();*/
+                int pos=getAdapterPosition();
+                    String id=courseList.get(pos).getExamId();
                     Intent is=new Intent(context, Mock_questions.class);
-                   // is.putExtra("id",id);
+                 is.putExtra("id",id);
                     is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(is);
                 }
@@ -72,8 +81,11 @@ qdetails.setTypeface(hintfont);
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Exam movie = courseList.get(position);
-        holder.title.setText(movie.getTitle() );
-        holder.quizqnumbers.setText(movie.getQuestion());
+        holder.title.setText(movie.getSubjectName() );
+        holder.qdetails.setText(movie.getTitle());
+        holder.qmarks.setText(movie.getTotalMark()+"MARKS");
+        holder.qnum.setText(movie.getQuestionNo()+"QNS");
+        holder.qtime.setText(movie.getTime()+"MINS");
 
 
     }

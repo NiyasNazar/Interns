@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -39,19 +42,22 @@ TextView mock;
 
     private void Loaddata() {
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
-        Call<Response_qlist>call=apiservice.qlists();
+        Call<Response_qlist>call=apiservice.qlists("cat304216","1");
         call.enqueue(new Callback<Response_qlist>() {
             @Override
             public void onResponse(Call<Response_qlist> call, Response<Response_qlist> response) {
+                Log.i("eroor",new Gson().toJson(response.body()));
+
                 Response_qlist response_qlist=response.body();
                 datalist=response_qlist.getExams();
-                Adapter_list_quizsub adapter_list_quizsub=new Adapter_list_quizsub(datalist,getApplicationContext());
+              Adapter_list_quizsub adapter_list_quizsub=new Adapter_list_quizsub(datalist,getApplicationContext());
                 recyclerView.setAdapter(adapter_list_quizsub);
 
             }
 
             @Override
             public void onFailure(Call<Response_qlist> call, Throwable t) {
+                Log.i("eroor",t.getMessage());
 
             }
         });
