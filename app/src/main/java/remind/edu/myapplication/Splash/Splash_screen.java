@@ -4,6 +4,11 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 import remind.edu.myapplication.Login;
 import remind.edu.myapplication.R;
@@ -17,7 +22,13 @@ public class Splash_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        new Handler().postDelayed(new Runnable() {
+
+
+
+
+
+
+       new Handler().postDelayed(new Runnable() {
 
 
 

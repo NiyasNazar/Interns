@@ -2,8 +2,8 @@
 <android.support.design.widget.TextInputLayout android:padding="4dp"
     android:id="@+id/l4"
 
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     app:hintTextAppearance="@style/TextLabel"
     android:layout_marginTop="3dp"
 

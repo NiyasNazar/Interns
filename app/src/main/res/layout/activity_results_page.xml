@@ -149,11 +149,11 @@ android:layout_marginTop="25dp"
         android:orientation="vertical"
         android:id="@+id/donelayout"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <View
-            android:layout_marginBottom="3dp"
+            android:layout_marginBottom="7dp"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"

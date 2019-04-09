@@ -83,9 +83,9 @@ qdetails.setTypeface(hintfont);
         Exam movie = courseList.get(position);
         holder.title.setText(movie.getSubjectName() );
         holder.qdetails.setText(movie.getTitle());
-        holder.qmarks.setText(movie.getTotalMark()+"MARKS");
-        holder.qnum.setText(movie.getQuestionNo()+"QNS");
-        holder.qtime.setText(movie.getTime()+"MINS");
+        holder.qmarks.setText(movie.getTotalMark()+" MARKS");
+        holder.qnum.setText(movie.getQuestionNo()+" QNS");
+        holder.qtime.setText(movie.getTime()+" MINS");
 
 
     }

@@ -153,8 +153,8 @@ btn_get_started.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onResponse(Call<Response_gen_otp> call, Response<Response_gen_otp> response) {
                 pdialog.dismiss();
-                Toast.makeText(getApplicationContext(),response.body().getStatus(),Toast.LENGTH_SHORT).show();
-                Log.i("response",response.body().getStatus().toString());
+                Toast.makeText(getApplicationContext(),"OTP Sent to Your Registered Mobile Number",Toast.LENGTH_SHORT).show();
+                button_otp.setText("RESEND OTP");
             }
 
             @Override

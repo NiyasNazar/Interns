@@ -38,6 +38,7 @@ dependencies {
     implementation 'com.nbsp:library:1.1'
     implementation 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
     implementation 'es.voghdev.pdfviewpager:library:1.0.6'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.google.code.gson:gson:2.7'
     implementation files('libs/simpleftp.jar')
     implementation files('libs/commons-net-3.6.jar')
@@ -45,4 +46,7 @@ dependencies {
     implementation project(':mylibrary')
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
 }

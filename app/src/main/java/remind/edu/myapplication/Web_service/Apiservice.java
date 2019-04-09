@@ -46,9 +46,9 @@ public interface Apiservice {
     @GET("list_subject.php")
     Call<Response_sublist> sublist(@Query("courseid") String courseid);
     @GET ("list_exam.php")
-    Call<Response_qlist>qlists(@Query("courseid")String courseid,@Query("type")String type);
+    Call<Response_qlist>qlists(@Query("courseid") String courseid, @Query("type") String type);
     @GET ("exam_questions.php")
-    Call<Response_quiz_questions>questions(@Query("exam_id")String examid);
+    Call<Response_quiz_questions>questions(@Query("exam_id") String examid);
 
 
 

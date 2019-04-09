@@ -1,5 +1,6 @@
 package remind.edu.myapplication.Exams;
 
+import android.app.ProgressDialog;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,10 +25,14 @@ public class List_quiz_subjects extends AppCompatActivity {
 RecyclerView recyclerView;
 List<Exam>datalist;
 TextView mock;
+ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_quiz_subjects);
+        progressDialog=new ProgressDialog(List_quiz_subjects.this);
+        progressDialog.setMessage("please Wait");
+        progressDialog.show();
         recyclerView=(RecyclerView)findViewById(R.id.recv);
         Typeface hintfont = Typeface.createFromAsset(getAssets(), "fonts/Bethanie_Snake_PersonalUseOnly.ttf");
         mock=(TextView)findViewById(R.id.tv_mock_exams);
@@ -47,7 +52,7 @@ TextView mock;
             @Override
             public void onResponse(Call<Response_qlist> call, Response<Response_qlist> response) {
                 Log.i("eroor",new Gson().toJson(response.body()));
-
+progressDialog.dismiss();
                 Response_qlist response_qlist=response.body();
                 datalist=response_qlist.getExams();
               Adapter_list_quizsub adapter_list_quizsub=new Adapter_list_quizsub(datalist,getApplicationContext());
@@ -58,6 +63,7 @@ TextView mock;
             @Override
             public void onFailure(Call<Response_qlist> call, Throwable t) {
                 Log.i("eroor",t.getMessage());
+                progressDialog.dismiss();
 
             }
         });

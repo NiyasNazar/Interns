@@ -18,15 +18,33 @@
 
         android:layout_width="match_parent"
         android:layout_height="220dp">
-        <TextView
+        <LinearLayout
             android:layout_marginTop="25dp"
-            android:id="@+id/view_question_number"
-          android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:textSize="17sp"
-            android:text="QUESTION"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+            <TextView
+android:layout_weight="1"
+                android:id="@+id/view_question_number"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:text="QUESTION"
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+            <TextView
+            android:drawableTint="#FFF"
+android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_action_qiconthree"
+                android:id="@+id/view_timer"
+android:gravity="center_vertical"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:text="QUESTION"
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+        </LinearLayout>
+
         <View
 
             android:layout_marginTop="6dp"
@@ -42,12 +60,13 @@
             android:id="@+id/view_question"
             android:gravity="center"
             android:textColor="#FFFFFF"
-            android:textSize="17sp"
+            android:textSize="20sp"
             android:text="QUESTION"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
-
+            android:visibility="gone"
+android:id="@+id/viewimage"
             android:layout_marginBottom="18dp"
             android:layout_marginTop="28dp"
             android:background="@drawable/capsule_white_bg"
@@ -61,13 +80,13 @@
     </LinearLayout>
     <RadioGroup
         android:layout_below="@+id/rr"
-
+android:layout_above="@id/llsubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/RGroup">
     <RadioButton
         android:layout_marginTop="10dp"
-        android:textSize="17sp"
+        android:textSize="20sp"
 android:buttonTint="@color/colorblue"
         android:textColor="@color/colorblue"
         android:id="@+id/radio_btn1"
@@ -87,7 +106,7 @@ android:buttonTint="@color/colorblue"
     <RadioButton
         android:id="@+id/radio_btn2"
         android:textColor="@color/colorblue"
-        android:textSize="17sp"
+        android:textSize="20sp"
         android:buttonTint="@color/colorblue"
 
         android:layout_below="@id/radio_btn1"
@@ -107,7 +126,7 @@ android:buttonTint="@color/colorblue"
         android:layout_height="1px"></View>
     <RadioButton
         android:textColor="@color/colorblue"
-        android:textSize="17sp"
+        android:textSize="20sp"
         android:buttonTint="@color/colorblue"
 
         android:id="@+id/radio_btn3"
@@ -128,7 +147,7 @@ android:layout_below="@id/radio_btn2"
         android:layout_height="1px"></View>
     <RadioButton
         android:textColor="@color/colorblue"
-android:textSize="17sp"
+        android:textSize="20sp"
         android:id="@+id/radio_btn4"
 android:layout_below="@id/radio_btn3"
         android:buttonTint="@color/colorblue"

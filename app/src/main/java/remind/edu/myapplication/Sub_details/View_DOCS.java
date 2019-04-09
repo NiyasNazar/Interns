@@ -1,11 +1,13 @@
 package remind.edu.myapplication.Sub_details;
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -34,18 +36,27 @@ PDFView pdfView;
     BasePDFPagerAdapter adapter;
     WebView webview;
     String pdfurl;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_view__docs);
+       progressDialog=new ProgressDialog(View_DOCS.this);
+       progressDialog.setMessage("Loading ...");
+
         pdfurl=getIntent().getStringExtra("urlpdf");
         Log.i("url",pdfurl);
 
         webview = (WebView) findViewById(R.id.webView1);
         webview.getSettings().setJavaScriptEnabled(true);
+
         webview.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                progressDialog.show();
+
                 super.onPageStarted(view, url, favicon);
                 webview.loadUrl("javascript:(function() { " +
                         "document.querySelector('[role=\"toolbar\"]').remove();})()");
@@ -53,6 +64,7 @@ PDFView pdfView;
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
+                progressDialog.dismiss();
                 webview.loadUrl("javascript:(function() { " +
                         "document.querySelector('[role=\"toolbar\"]').remove();})()");
             }
