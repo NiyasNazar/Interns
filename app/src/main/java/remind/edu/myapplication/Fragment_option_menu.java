@@ -9,10 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import remind.edu.myapplication.Exams.Mock_questions;
 import remind.edu.myapplication.Select_edu.Choose_Qualification;
 
 public class Fragment_option_menu extends Fragment {
-    TextView choose_course;
+    TextView choose_course,logout,startmockexam;
 
     public Fragment_option_menu(){
 
@@ -23,6 +24,24 @@ public class Fragment_option_menu extends Fragment {
 
         View rootView = inflater.inflate(R.layout.side_menu_fragment, container, false);
         choose_course=(TextView)rootView.findViewById(R.id.tv_option1);
+     logout=(TextView)rootView.findViewById(R.id.tv_option3);
+        startmockexam=(TextView)rootView.findViewById(R.id.tv_option2);
+        startmockexam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), Mock_questions.class);
+                startActivity(i);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             Intent i = new Intent(getActivity(), Login.class);
+             startActivity(i);
+             getActivity().finish();
+         }
+     });
         choose_course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -2,6 +2,7 @@ package remind.edu.myapplication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
@@ -36,10 +37,15 @@ TextInputEditText mMob,mOtp;
 Apiservice apiservice;
 ProgressDialog pdialog;
   boolean isFirstTime;
+    public static final String PREFS_NAME = "MyPrefsFile";
+    SharedPreferences settings;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+    settings = getSharedPreferences(PREFS_NAME, 0); // 0 - for private mode
+         editor = settings.edit();
         isFirstTime = MyPreferences.isFirst(Login.this);
         pdialog=new ProgressDialog(Login.this);
         pdialog.setCancelable(false);
@@ -123,7 +129,10 @@ btn_get_started.setOnClickListener(new View.OnClickListener() {
                 Toast.makeText(getApplicationContext(),response.body().getStatus(),Toast.LENGTH_SHORT).show();
                 pdialog.dismiss();
                 if (response.body().getStatus().equals("success")) {
+                    editor.putBoolean("hasLoggedIn", true);
 
+// Commit the edits!
+                    editor.commit();
                     mMob.setText("");
                     mOtp.setText("");
                     if (isFirstTime){

@@ -35,7 +35,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Mock_questions extends AppCompatActivity {
+public class Mock_questions extends AppCompatActivity  {
     List<Question>datalist;
     RadioButton rd1,rd2,rd3,rd4;
     TextView viewquestions,questionnumber;
@@ -99,7 +99,7 @@ rd1.setTypeface(hintfont);
                     alert.setView(alertLayout);
                     // disallow cancel of AlertDialog on click of back button and outside touch
                     alert.setCancelable(false);
-                    alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    alert.setNegativeButton("OK", new DialogInterface.OnClickListener() {
 
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
