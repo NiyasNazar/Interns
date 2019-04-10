@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import remind.edu.myapplication.Exams.List_quiz_subjects;
 import remind.edu.myapplication.Exams.Mock_questions;
 import remind.edu.myapplication.Select_edu.Choose_Qualification;
 
@@ -29,8 +30,8 @@ public class Fragment_option_menu extends Fragment {
         startmockexam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), Mock_questions.class);
-                startActivity(i);
+                Intent is=new Intent(getActivity(), List_quiz_subjects.class);
+                startActivity(is);
             }
         });
 

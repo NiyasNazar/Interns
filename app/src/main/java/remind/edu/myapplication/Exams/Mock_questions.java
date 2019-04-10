@@ -3,7 +3,9 @@ package remind.edu.myapplication.Exams;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -22,6 +25,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.provider.LoadProvider;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import org.apache.commons.net.io.ToNetASCIIInputStream;
 
@@ -51,12 +55,14 @@ LinearLayout submit;
     TextView _tv;
 Button imagebutton;
  RadioGroup radioGroup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mock_questions);
         imagebutton=(Button)findViewById(R.id.viewimage);
        _tv = (TextView) findViewById( R.id.view_timer );
+
         id=getIntent().getStringExtra("id");
         Log.i("idxx",id);
         progressDialog=new ProgressDialog(Mock_questions.this);
@@ -86,10 +92,31 @@ rd1.setTypeface(hintfont);
             public void onClick(View view) {
 
 
-                    LayoutInflater inflater = getLayoutInflater();
+                    final LayoutInflater inflater = getLayoutInflater();
                     View alertLayout = inflater.inflate(R.layout.layout_custom_dialog, null);
-                    ImageView imv = (ImageView) alertLayout.findViewById(R.id.imvs);
-                Picasso.with(getApplicationContext()).load(url).into(imv);
+                    final ImageView imv = (ImageView) alertLayout.findViewById(R.id.imvs);
+                final ProgressBar   progressbar=(ProgressBar)alertLayout.findViewById(R.id.pdialog);
+                    progressbar.setVisibility(View.VISIBLE);
+                Picasso.with(getApplicationContext()).load(url).into(new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        imv.setImageBitmap(bitmap);
+                        progressbar.setVisibility(View.GONE);
+
+                    }
+
+                    @Override
+                    public void onBitmapFailed(Drawable errorDrawable) {
+                        progressbar.setVisibility(View.GONE);
+
+
+                    }
+
+                    @Override
+                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                    }
+                });
                 Log.i("urlempty",url);
 
 
