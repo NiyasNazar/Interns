@@ -44,7 +44,7 @@ Adapter_sub_cat adapter_main_cat;
     }
     private void Load() {
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
-        Call<Response_course> call=apiservice.maincatlist("cat321709");
+        Call<Response_course> call=apiservice.maincatlist(course_id);
         call.enqueue(new Callback<Response_course>() {
             @Override
             public void onResponse(Call<Response_course> call, Response<Response_course> response) {

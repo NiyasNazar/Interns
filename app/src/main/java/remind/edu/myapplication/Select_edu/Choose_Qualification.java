@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import remind.edu.myapplication.Login;
 import remind.edu.myapplication.R;
 import remind.edu.myapplication.Web_service.ApiClient;
 import remind.edu.myapplication.Web_service.Apiservice;

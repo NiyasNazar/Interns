@@ -2,7 +2,9 @@ package remind.edu.myapplication.Sub_details;
 
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -50,7 +52,7 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class Documents extends Fragment {
-
+SharedPreferences preferences;
     RecyclerView recyclerview;
     public Documents() {
         // Required empty public constructor
@@ -64,19 +66,21 @@ public class Documents extends Fragment {
 
       View view= inflater.inflate(R.layout.fragment_documents, container, false);
       EditText ed_search_view=(EditText)view.findViewById(R.id.ed_search);
+      preferences=getActivity().getSharedPreferences("subid", Context.MODE_PRIVATE);
+      String subid=preferences.getString("subids",null);
         Typeface hintfont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Melbourne_reg.otf");
         ed_search_view.setTypeface(hintfont);
       recyclerview=(RecyclerView)view.findViewById(R.id.recv_documents);
       recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-fetchfromserver();
+fetchfromserver(subid);
 
       
       return view;
     }
 
-    private void fetchfromserver() {
+    private void fetchfromserver(String sub) {
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
-        Call<JsonObject>call=apiservice.subdetails("sub1292412");
+        Call<JsonObject>call=apiservice.subdetails(sub);
         call.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {

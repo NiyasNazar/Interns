@@ -20,7 +20,7 @@ import retrofit2.http.Query;
 public interface Apiservice {
     @FormUrlEncoded
     @POST("user_login.php")
-    Call<Response_gen_otp> generate_Otp(@Field("mobileno") String mobile);
+    Call<Response_gen_otp>  generate_Otp(@Field("mobileno") String mobile);
     @FormUrlEncoded
     @POST("user_validate.php")
     Call<Response_validate_otp> verify_otp(@Field("mobileno") String mobile, @Field("otp") String otp);

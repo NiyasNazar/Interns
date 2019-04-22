@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Select_edu.Choose_Qualification" />
-        <activity android:name=".Login" />
+
         <activity android:name=".Register" />
         <activity android:name=".Dash_board"
             android:windowSoftInputMode="stateHidden">
@@ -57,6 +57,7 @@
         <activity android:name=".Exams.Mock_questions" />
         <activity android:name=".Exams.Results_page" />
         <activity android:name=".Exams.List_quiz_subjects"></activity>
+        <activity android:name=".Splash.Login"></activity>
     </application>
 
 </manifest>

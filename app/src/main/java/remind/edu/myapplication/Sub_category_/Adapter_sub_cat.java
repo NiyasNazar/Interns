@@ -3,6 +3,7 @@ package remind.edu.myapplication.Sub_category_;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.RecyclerView;
@@ -26,6 +27,8 @@ public class Adapter_sub_cat extends RecyclerView.Adapter<Adapter_sub_cat.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public EditText title;
         TextInputLayout titlelayout;
+        SharedPreferences sharedPreferences=context.getSharedPreferences("dash",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
 
         public MyViewHolder(View view) {
             super(view);
@@ -42,6 +45,8 @@ public class Adapter_sub_cat extends RecyclerView.Adapter<Adapter_sub_cat.MyView
                     Intent is=new Intent(context, Dash_board.class);
                     is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     is.putExtra("id",id);
+                    editor.putString("dash",id);
+                    editor.commit();
                     context.startActivity(is);
                 }
             });

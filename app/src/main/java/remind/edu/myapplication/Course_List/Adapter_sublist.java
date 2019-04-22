@@ -2,6 +2,7 @@ package remind.edu.myapplication.Course_List;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.RecyclerView;
@@ -26,6 +27,7 @@ public class Adapter_sublist extends RecyclerView.Adapter<Adapter_sublist.MyView
 
     private List<Subjects> courseList;
     Context context;
+    SharedPreferences sharedPreferences;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -34,6 +36,8 @@ public class Adapter_sublist extends RecyclerView.Adapter<Adapter_sublist.MyView
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.tv_sub_names);
+            sharedPreferences=context.getSharedPreferences("subid",Context.MODE_PRIVATE);
+            final SharedPreferences.Editor editor=sharedPreferences.edit();
             subimg=(ImageView)view.findViewById(R.id.imv_subs);
             Typeface hintfont = Typeface.createFromAsset(context.getAssets(), "fonts/Melbourne_reg.otf");
             title.setTypeface(hintfont);
@@ -43,9 +47,13 @@ public class Adapter_sublist extends RecyclerView.Adapter<Adapter_sublist.MyView
                   int pos=getAdapterPosition();
                     String subname=courseList.get(pos).getSubjectName();
                     String Image_url=courseList.get(pos).getImage();
+                    String subid=courseList.get(pos).getSubjectId();
                     Intent is=new Intent(context, Subject_details.class);
                     is.putExtra("subname",subname);
                     is.putExtra("Image_url",Image_url);
+                    is.putExtra("subid",subid);
+                    editor.putString("subids",subid);
+                    editor.commit();
                     is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(is);
                 }

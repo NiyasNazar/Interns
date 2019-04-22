@@ -2,6 +2,7 @@ package remind.edu.myapplication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nbsp.materialfilepicker.widget.EmptyRecyclerView;
 
@@ -38,11 +40,18 @@ Button mockstart;
 ProgressDialog progressDialog;
 Fragment_option_menu fragment_option_menu;
 ImageView side;
+String course_id;
+SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
         fragment_option_menu=new Fragment_option_menu();
+      //  course_id=getIntent().getStringExtra("id");
+        sharedPreferences=getSharedPreferences("dash",MODE_PRIVATE);
+        course_id=sharedPreferences.getString("dash",null);
+        Toast.makeText(getApplicationContext(),"xx"+course_id,Toast.LENGTH_LONG).show();
+
         side=(ImageView)findViewById(R.id.side_menu);
         side.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,11 +74,12 @@ recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),3));
             @Override
             public void onClick(View v) {
                 Intent is=new Intent(getApplicationContext(), List_quiz_subjects.class);
+                is.putExtra("courseid",course_id);
                 startActivity(is);
             }
         });
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
-        Call<Response_sublist>call=apiservice.sublist("cat304216");
+        Call<Response_sublist>call=apiservice.sublist(course_id);
         call.enqueue(new Callback<Response_sublist>() {
             @Override
             public void onResponse(Call<Response_sublist> call, Response<Response_sublist> response) {
@@ -93,6 +103,7 @@ progressDialog.dismiss();
 
     }
     private void replace(Fragment fragment) {
+
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =

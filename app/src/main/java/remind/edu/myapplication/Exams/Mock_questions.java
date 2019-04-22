@@ -22,12 +22,15 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.squareup.picasso.Picasso;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.provider.LoadProvider;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 import org.apache.commons.net.io.ToNetASCIIInputStream;
+
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -242,7 +245,7 @@ rd1.setTypeface(hintfont);
 radioGroup.clearCheck();
 
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
-        Call<Response_quiz_questions>call=apiservice.questions("exm_20122");
+        Call<Response_quiz_questions>call=apiservice.questions(id);
         call.enqueue(new Callback<Response_quiz_questions>() {
             @Override
             public void onResponse(Call<Response_quiz_questions> call, Response<Response_quiz_questions> response) {

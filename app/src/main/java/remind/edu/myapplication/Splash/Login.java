@@ -1,5 +1,4 @@
-package remind.edu.myapplication;
-
+package remind.edu.myapplication.Splash;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,8 +18,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import remind.edu.myapplication.Dash_board;
 import remind.edu.myapplication.Generate_otp.Response_gen_otp;
 import remind.edu.myapplication.Generate_otp.Response_validate_otp;
+import remind.edu.myapplication.R;
+import remind.edu.myapplication.Register;
 import remind.edu.myapplication.Select_edu.Choose_Qualification;
 import remind.edu.myapplication.Splash.Splash_screen;
 import remind.edu.myapplication.Utils.MyPreferences;
@@ -32,11 +34,11 @@ import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
 
-Button button_otp,btn_get_started;
-TextInputEditText mMob,mOtp;
-Apiservice apiservice;
-ProgressDialog pdialog;
-  boolean isFirstTime;
+    Button button_otp,btn_get_started;
+    TextInputEditText mMob,mOtp;
+    Apiservice apiservice;
+    ProgressDialog pdialog;
+    boolean isFirstTime;
     public static final String PREFS_NAME = "MyPrefsFile";
     SharedPreferences settings;
     SharedPreferences.Editor editor;
@@ -44,8 +46,8 @@ ProgressDialog pdialog;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-    settings = getSharedPreferences(PREFS_NAME, 0); // 0 - for private mode
-         editor = settings.edit();
+        settings = getSharedPreferences(PREFS_NAME, 0); // 0 - for private mode
+        editor = settings.edit();
         isFirstTime = MyPreferences.isFirst(Login.this);
         pdialog=new ProgressDialog(Login.this);
         pdialog.setCancelable(false);
@@ -66,11 +68,11 @@ ProgressDialog pdialog;
                 String otp = mOtp.getText().toString();
 
                 if(!number.equals("")&&number != null && number.matches("[0-9]{10}")&& otp.matches("[0-9]{4}")){
-pdialog.show();
-                   Validate_otp(number,otp);
+                    pdialog.show();
+                    Validate_otp(number,otp);
                 }
                 //do what you need to do for valid input
-     else{
+                else{
 
                 }
 
@@ -92,30 +94,31 @@ pdialog.show();
 
         button_otp=(Button)findViewById(R.id.btn_otp);
         btn_get_started=(Button)findViewById(R.id.get_started);
-       button_otp.setTypeface(buttonfont);
-btn_get_started.setTypeface(buttonfont);
+        button_otp.setTypeface(buttonfont);
+        btn_get_started.setTypeface(buttonfont);
 
 
-button_otp.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        String mobilenum=mMob.getText().toString();
-        String otp=mOtp.getText().toString();
-        Checknumbervalidation(mobilenum);
-       // Validate_otp(mobilenum,otp);
-       // Intent login=new Intent(getApplicationContext(),Dash_board.class);
-        //startActivity(login);
+        button_otp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pdialog.show();
+                String mobilenum=mMob.getText().toString();
+                String otp=mOtp.getText().toString();
+                Checknumbervalidation(mobilenum);
+                // Validate_otp(mobilenum,otp);
+                // Intent login=new Intent(getApplicationContext(),Dash_board.class);
+                //startActivity(login);
 
-    }
-});
-btn_get_started.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent get_started=new Intent(getApplicationContext(),Register.class);
-        startActivity(get_started);
+            }
+        });
+        btn_get_started.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent get_started=new Intent(getApplicationContext(), Register.class);
+                startActivity(get_started);
 
-    }
-});
+            }
+        });
 
 
 
@@ -162,8 +165,15 @@ btn_get_started.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onResponse(Call<Response_gen_otp> call, Response<Response_gen_otp> response) {
                 pdialog.dismiss();
-                Toast.makeText(getApplicationContext(),"OTP Sent to Your Registered Mobile Number",Toast.LENGTH_SHORT).show();
-                button_otp.setText("RESEND OTP");
+                String responsemob=response.body().getStatus();
+                if (responsemob.equals("otp_send")) {
+                    Toast.makeText(getApplicationContext(), "OTP Sent to Your Registered Mobile Number" , Toast.LENGTH_SHORT).show();
+                    button_otp.setText("RESEND OTP");
+                }else{
+                    Toast.makeText(getApplicationContext(), "Mobile Number Not Registered" , Toast.LENGTH_SHORT).show();
+
+
+                }
             }
 
             @Override

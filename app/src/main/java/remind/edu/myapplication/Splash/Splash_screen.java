@@ -12,12 +12,13 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 import remind.edu.myapplication.Dash_board;
-import remind.edu.myapplication.Login;
+
 import remind.edu.myapplication.R;
 import remind.edu.myapplication.Select_edu.Choose_Qualification;
 import remind.edu.myapplication.Utils.MyPreferences;
 
-import static remind.edu.myapplication.Login.PREFS_NAME;
+
+import static remind.edu.myapplication.Splash.Login.PREFS_NAME;
 
 public class Splash_screen extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 3000;

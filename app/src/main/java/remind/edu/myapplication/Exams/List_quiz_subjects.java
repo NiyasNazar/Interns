@@ -25,11 +25,13 @@ public class List_quiz_subjects extends AppCompatActivity {
 RecyclerView recyclerView;
 List<Exam>datalist;
 TextView mock;
+String courseid;
 ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_quiz_subjects);
+        courseid=getIntent().getStringExtra("courseid");
         progressDialog=new ProgressDialog(List_quiz_subjects.this);
         progressDialog.setMessage("please Wait");
         progressDialog.show();
@@ -47,7 +49,7 @@ ProgressDialog progressDialog;
 
     private void Loaddata() {
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
-        Call<Response_qlist>call=apiservice.qlists("cat304216","1");
+        Call<Response_qlist>call=apiservice.qlists(courseid,"1");
         call.enqueue(new Callback<Response_qlist>() {
             @Override
             public void onResponse(Call<Response_qlist> call, Response<Response_qlist> response) {

@@ -1,6 +1,7 @@
 package remind.edu.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 import remind.edu.myapplication.Exams.List_quiz_subjects;
 import remind.edu.myapplication.Exams.Mock_questions;
 import remind.edu.myapplication.Select_edu.Choose_Qualification;
+import remind.edu.myapplication.Splash.Login;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class Fragment_option_menu extends Fragment {
     TextView choose_course,logout,startmockexam;
@@ -23,7 +27,10 @@ public class Fragment_option_menu extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
         View rootView = inflater.inflate(R.layout.side_menu_fragment, container, false);
+     SharedPreferences sharedPreferences=getActivity().getSharedPreferences("dash",MODE_PRIVATE);
+       final String course_id=sharedPreferences.getString("dash",null);
         choose_course=(TextView)rootView.findViewById(R.id.tv_option1);
      logout=(TextView)rootView.findViewById(R.id.tv_option3);
         startmockexam=(TextView)rootView.findViewById(R.id.tv_option2);
@@ -31,6 +38,7 @@ public class Fragment_option_menu extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent is=new Intent(getActivity(), List_quiz_subjects.class);
+                is.putExtra("courseid",course_id);
                 startActivity(is);
             }
         });

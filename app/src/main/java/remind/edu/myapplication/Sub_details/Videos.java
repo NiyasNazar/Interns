@@ -1,6 +1,8 @@
 package remind.edu.myapplication.Sub_details;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -32,7 +34,7 @@ import retrofit2.Response;
  */
 public class Videos extends Fragment {
     RecyclerView recyclerview;
-
+SharedPreferences sharedPreferences;
     public Videos() {
         // Required empty public constructor
     }
@@ -43,18 +45,19 @@ public class Videos extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_videos, container, false);
-
+        sharedPreferences=getActivity().getSharedPreferences("subid", Context.MODE_PRIVATE);
+      String subid=sharedPreferences.getString("subids",null);
         recyclerview=(RecyclerView)view.findViewById(R.id.recv_documents);
         recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        fetchfromserver();
+        fetchfromserver(subid);
 
 
         return view;
     }
 
-    private void fetchfromserver() {
+    private void fetchfromserver(String subid) {
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
-        Call<JsonObject> call=apiservice.subdetails("sub1292412");
+        Call<JsonObject> call=apiservice.subdetails(subid);
         call.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
