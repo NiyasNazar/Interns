@@ -54,8 +54,10 @@ qdetails.setTypeface(hintfont);
                 public void onClick(View v) {
                 int pos=getAdapterPosition();
                     String id=courseList.get(pos).getExamId();
+                    String time=courseList.get(pos).getTime();
                     Intent is=new Intent(context, Mock_questions.class);
                  is.putExtra("id",id);
+                 is.putExtra("time",time);
                     is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(is);
                 }

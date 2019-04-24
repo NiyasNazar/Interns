@@ -58,6 +58,9 @@ LinearLayout submit;
     TextView _tv;
 Button imagebutton;
  RadioGroup radioGroup;
+    int listsize;
+    int time;
+    long calculatedtime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,8 @@ Button imagebutton;
        _tv = (TextView) findViewById( R.id.view_timer );
 
         id=getIntent().getStringExtra("id");
+        time= Integer.parseInt(getIntent().getStringExtra("time"));
+ calculatedtime = time * 60000;
         Log.i("idxx",id);
         progressDialog=new ProgressDialog(Mock_questions.this);
         progressDialog.setMessage("please Wait");
@@ -146,7 +151,7 @@ rd1.setTypeface(hintfont);
         });
 
         Load();
-        new CountDownTimer(5400000, 1000) { // adjust the milli seconds here
+        new CountDownTimer(120000, 1000) { // adjust the milli seconds here
 
             public void onTick(long millisUntilFinished) {
                 _tv.setText(""+String.format("%d min :%d sec",
@@ -156,6 +161,11 @@ rd1.setTypeface(hintfont);
             }
 
             public void onFinish() {
+                String a= String.valueOf(listsize);
+                String b= String.valueOf(rightanser);
+                String c= String.valueOf(wrongcount);
+                String d= String.valueOf(totalmark);
+                finishac(a,b,c,d);
 
             }
         }.start();
@@ -251,7 +261,7 @@ radioGroup.clearCheck();
             public void onResponse(Call<Response_quiz_questions> call, Response<Response_quiz_questions> response) {
                 Response_quiz_questions response_quiz_questions=response.body();
                 datalist=response_quiz_questions.getQuestions();
-                final int listsize=datalist.size();
+         listsize=datalist.size();
                
 
                 if (i<listsize) {
@@ -314,5 +324,6 @@ progressDialog.dismiss();
         is.putExtra("wrong",c);
         is.putExtra("totalmark",d);
         startActivity(is);
+        finish();
     }
 }
