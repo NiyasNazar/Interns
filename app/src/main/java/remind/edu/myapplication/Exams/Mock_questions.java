@@ -323,6 +323,7 @@ progressDialog.dismiss();
         is.putExtra("ans",b);
         is.putExtra("wrong",c);
         is.putExtra("totalmark",d);
+        is.putExtra("id",id);
         startActivity(is);
         finish();
     }

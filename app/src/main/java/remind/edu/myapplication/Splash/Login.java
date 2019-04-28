@@ -133,6 +133,9 @@ public class Login extends AppCompatActivity {
                 pdialog.dismiss();
                 if (response.body().getStatus().equals("success")) {
                     editor.putBoolean("hasLoggedIn", true);
+                    String userid=response.body().getUserid();
+                    editor.putString("userid",userid);
+
 
 // Commit the edits!
                     editor.commit();

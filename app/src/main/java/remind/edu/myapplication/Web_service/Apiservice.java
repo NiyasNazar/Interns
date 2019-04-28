@@ -2,10 +2,13 @@ package remind.edu.myapplication.Web_service;
 
 import com.google.gson.JsonObject;
 
+import remind.edu.myapplication.Add_mock_result.Response_add_result;
 import remind.edu.myapplication.Course_List.Response_sublist;
 import remind.edu.myapplication.Exams.Response_qlist;
 import remind.edu.myapplication.Exams.Response_quiz_questions;
 import remind.edu.myapplication.Generate_otp.Response_validate_otp;
+import remind.edu.myapplication.Leader_Board.Response_leaders;
+import remind.edu.myapplication.Leader_Board.Response_list_leaderexm;
 import remind.edu.myapplication.Response_register;
 import remind.edu.myapplication.Select_edu.Response_course;
 import remind.edu.myapplication.Generate_otp.Response_gen_otp;
@@ -49,6 +52,20 @@ public interface Apiservice {
     Call<Response_qlist>qlists(@Query("courseid") String courseid, @Query("type") String type);
     @GET ("exam_questions.php")
     Call<Response_quiz_questions>questions(@Query("exam_id") String examid);
+    @FormUrlEncoded
+    @POST ("result_add.php")
+    Call<Response_add_result>admockres(@Field("userid") String userid,
+                                       @Field("exam_id") String examid,
+                                        @Field("course_id") String course_id,
+    @Field("total_mark") String total_mark,
+                                       @Field("plus_mark") String plus_mark,
+                                       @Field("minus_mark") String minus_mark,
+                                       @Field("type")String Type);
+
+    @GET ("list_leaders_exam.php")
+    Call<Response_list_leaderexm>Leadersublist(@Query("courseid") String courseid,@Query("type")String type);
+    @GET ("list_leaders.php?")
+    Call<Response_leaders>listleaders(@Query("exam_id") String courseid, @Query("type")String type);
 
 
 

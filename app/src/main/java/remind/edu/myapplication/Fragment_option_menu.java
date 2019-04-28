@@ -12,13 +12,14 @@ import android.widget.TextView;
 
 import remind.edu.myapplication.Exams.List_quiz_subjects;
 import remind.edu.myapplication.Exams.Mock_questions;
+import remind.edu.myapplication.Leader_Board.Leaderboard_Activity;
 import remind.edu.myapplication.Select_edu.Choose_Qualification;
 import remind.edu.myapplication.Splash.Login;
 
 import static android.content.Context.MODE_PRIVATE;
 
 public class Fragment_option_menu extends Fragment {
-    TextView choose_course,logout,startmockexam;
+    TextView choose_course,logout,startmockexam,Leaderboard;
 
     public Fragment_option_menu(){
 
@@ -34,6 +35,15 @@ public class Fragment_option_menu extends Fragment {
         choose_course=(TextView)rootView.findViewById(R.id.tv_option1);
      logout=(TextView)rootView.findViewById(R.id.tv_option3);
         startmockexam=(TextView)rootView.findViewById(R.id.tv_option2);
+        Leaderboard=(TextView)rootView.findViewById(R.id.tv_option4);
+        Leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent is=new Intent(getActivity(), Leaderboard_Activity.class);
+                is.putExtra("courseid",course_id);
+                startActivity(is);
+            }
+        });
         startmockexam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

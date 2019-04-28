@@ -14,15 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Leader_Board.Leaderboard_Activity"></activity>
         <activity android:name=".Select_edu.Choose_Qualification" />
-
         <activity android:name=".Register" />
-        <activity android:name=".Dash_board"
-            android:windowSoftInputMode="stateHidden">
-
-        </activity>
-
-
+        <activity
+            android:name=".Dash_board"
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity android:name=".Main_category.Main_category" />
         <activity android:name=".Splash.Splash_screen">
             <intent-filter>
@@ -56,8 +53,9 @@
         <activity android:name=".Sub_details.Video_Views" />
         <activity android:name=".Exams.Mock_questions" />
         <activity android:name=".Exams.Results_page" />
-        <activity android:name=".Exams.List_quiz_subjects"></activity>
-        <activity android:name=".Splash.Login"></activity>
+        <activity android:name=".Exams.List_quiz_subjects" />
+        <activity android:name=".Splash.Login" />
+        <activity android:name=".Leader_Board.View_Toppers"></activity>
     </application>
 
 </manifest>
