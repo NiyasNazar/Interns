@@ -9,15 +9,17 @@
        android:layout_height="match_parent">
 
    <android.support.v7.widget.RecyclerView
+       android:layout_above="@id/imx"
        android:layout_marginTop="30dp"
        android:id="@+id/recv"
        android:layout_width="match_parent"
 
-       android:layout_height="wrap_content">
+       android:layout_height="match_parent">
 
    </android.support.v7.widget.RecyclerView>
 
       <ImageView
+          android:id="@+id/imx"
           android:scaleType="fitXY"
           android:adjustViewBounds="true"
           android:layout_width="wrap_content"
