@@ -1,6 +1,7 @@
 package remind.edu.myapplication.Leader_Board;
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -21,7 +25,7 @@ import retrofit2.Response;
 import static android.content.Context.MODE_PRIVATE;
 
 public class Central extends Fragment {
-
+TextView textView;
 
     public Central() {
         // Required empty public constructor
@@ -31,20 +35,23 @@ public class Central extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_mock_up, container, false);
+        View view= inflater.inflate(R.layout.fragment_cental_up, container, false);
         SharedPreferences sharedPreferences=getActivity().getSharedPreferences("dash",MODE_PRIVATE);
         String  course_id=sharedPreferences.getString("dash",null);
-        final RecyclerView recyclerview=(RecyclerView)view.findViewById(R.id.recv);
-        recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        textView=(TextView)view.findViewById(R.id.tv_noexam);
+        Typeface hintfont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Melbourne_reg.otf");
+        textView .setTypeface(hintfont);
+      /*  final RecyclerView recyclerview=(RecyclerView)view.findViewById(R.id.recv);
+        recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));*/
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
         Call<Response_list_leaderexm> call=apiservice.Leadersublist(course_id,"2");
         call.enqueue(new Callback<Response_list_leaderexm>() {
             @Override
             public void onResponse(Call<Response_list_leaderexm> call, Response<Response_list_leaderexm> response) {
-                Response_list_leaderexm response_list_leaderexm=response.body();
+          /*      Response_list_leaderexm response_list_leaderexm=response.body();
                 List<LExam> datalist=response_list_leaderexm.getExams();
                 LeaderAdapterlistsubcentral adapter=new LeaderAdapterlistsubcentral(datalist,getActivity());
-                recyclerview.setAdapter(adapter);
+                recyclerview.setAdapter(adapter);*/
 
             }
 

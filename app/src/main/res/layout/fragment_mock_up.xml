@@ -3,10 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+   android:background="@color/bgcolor"
     tools:context=".Leader_Board.Mock_up">
-   <RelativeLayout
+   <ImageView
+       android:id="@+id/imx"
+
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
+       android:layout_height="120dp"
+       android:layout_gravity="bottom|center_horizontal"
+     android:layout_marginLeft="50dp"
+
+       android:layout_marginRight="20dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/leaders_bottom" />
 
    <android.support.v7.widget.RecyclerView
        android:layout_above="@id/imx"
@@ -14,24 +23,15 @@
        android:id="@+id/recv"
        android:layout_width="match_parent"
 
+
+
        android:layout_height="match_parent">
 
    </android.support.v7.widget.RecyclerView>
 
-      <ImageView
-          android:id="@+id/imx"
-          android:scaleType="fitXY"
-          android:adjustViewBounds="true"
-          android:layout_width="wrap_content"
-          android:layout_height="120dp"
-          android:layout_alignParentBottom="true"
-          android:layout_marginBottom="2dp"
-          android:layout_marginLeft="75dp"
-          android:layout_marginRight="2dp"
-          android:layout_marginTop="35dp"
-          android:src="@drawable/leaders_bottom" />
 
 
 
-   </RelativeLayout>
+
+
 </FrameLayout>
