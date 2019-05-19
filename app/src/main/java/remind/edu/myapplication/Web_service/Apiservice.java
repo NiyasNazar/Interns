@@ -3,6 +3,7 @@ package remind.edu.myapplication.Web_service;
 import com.google.gson.JsonObject;
 
 import remind.edu.myapplication.Add_mock_result.Response_add_result;
+import remind.edu.myapplication.Central_exam.Response_Centralqlist;
 import remind.edu.myapplication.Course_List.Response_sublist;
 import remind.edu.myapplication.Exams.Response_qlist;
 import remind.edu.myapplication.Exams.Response_quiz_questions;
@@ -50,6 +51,9 @@ public interface Apiservice {
     Call<Response_sublist> sublist(@Query("courseid") String courseid);
     @GET ("list_exam.php")
     Call<Response_qlist>qlists(@Query("courseid") String courseid, @Query("type") String type);
+    @GET ("list_exam.php")
+    Call< Response_Centralqlist>qlistsx(@Query("courseid") String courseid, @Query("type") String type);
+
     @GET ("exam_questions.php")
     Call<Response_quiz_questions>questions(@Query("exam_id") String examid);
     @FormUrlEncoded

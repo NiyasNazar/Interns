@@ -37,8 +37,8 @@ public class Leaderboard_Activity extends AppCompatActivity {
         subname.setTypeface(hintfont);
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         viewPager=(ViewPager)findViewById(R.id.viewPager);
-        tabLayout.addTab(tabLayout.newTab().setText("Mockup Exam"));
-        tabLayout.addTab(tabLayout.newTab().setText("Central Exam"));
+        tabLayout.addTab(tabLayout.newTab().setText("Mockup CentralExam"));
+        tabLayout.addTab(tabLayout.newTab().setText("Central CentralExam"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         changeTabsFont();
         View root = tabLayout.getChildAt(0);

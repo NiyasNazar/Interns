@@ -89,9 +89,10 @@ progressDialog.setCancelable(false);
             @Override
             public void onResponse(Call<Response_add_result> call, Response<Response_add_result> response) {
                 progressDialog.dismiss();
-                Intent is=new Intent(getApplicationContext(), Dash_board.class);
+                Toast.makeText(getApplicationContext(),"res"+response.body().getStatus(),Toast.LENGTH_SHORT).show();
+              /*  Intent is=new Intent(getApplicationContext(), Dash_board.class);
                 startActivity(is);
-                finish();
+                finish();*/
             }
 
             @Override

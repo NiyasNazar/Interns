@@ -1,40 +1,27 @@
-package remind.edu.myapplication.Exams;
+package remind.edu.myapplication.Central_exam;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.os.CountDownTimer;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.squareup.picasso.Picasso;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.provider.LoadProvider;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
-
-import org.apache.commons.net.io.ToNetASCIIInputStream;
-
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import remind.edu.myapplication.Exams.Results_page;
 import remind.edu.myapplication.R;
 import remind.edu.myapplication.Web_service.ApiClient;
 import remind.edu.myapplication.Web_service.Apiservice;
