@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import remind.edu.myapplication.Central_exam.List_Cquiz_subjects;
 import remind.edu.myapplication.Exams.List_quiz_subjects;
 import remind.edu.myapplication.Exams.Mock_questions;
 import remind.edu.myapplication.Leader_Board.Leaderboard_Activity;
@@ -19,7 +20,7 @@ import remind.edu.myapplication.Splash.Login;
 import static android.content.Context.MODE_PRIVATE;
 
 public class Fragment_option_menu extends Fragment {
-    TextView choose_course,logout,startmockexam,Leaderboard;
+    TextView choose_course,logout,startmockexam,Leaderboard,startcentral;
 
     public Fragment_option_menu(){
 
@@ -35,6 +36,7 @@ public class Fragment_option_menu extends Fragment {
         choose_course=(TextView)rootView.findViewById(R.id.tv_option1);
      logout=(TextView)rootView.findViewById(R.id.tv_option3);
         startmockexam=(TextView)rootView.findViewById(R.id.tv_option2);
+        startcentral=(TextView)rootView.findViewById(R.id.tv_option5);
         Leaderboard=(TextView)rootView.findViewById(R.id.tv_option4);
         Leaderboard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,14 @@ public class Fragment_option_menu extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent is=new Intent(getActivity(), List_quiz_subjects.class);
+                is.putExtra("courseid",course_id);
+                startActivity(is);
+            }
+        });
+        startcentral.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent is=new Intent(getActivity(), List_Cquiz_subjects.class);
                 is.putExtra("courseid",course_id);
                 startActivity(is);
             }

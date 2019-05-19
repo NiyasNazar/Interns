@@ -50,6 +50,23 @@ android:layout_marginRight="180dp"
         android:layout_height="1.5px"
         android:background="#3FFF"></View>
     <TextView
+        android:id="@+id/tv_option5"
+
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:textColor="#FFF"
+        android:text="START CENTRAL EXAM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="60dp"
+
+        android:layout_marginRight="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="1.5px"
+        android:background="#3FFF"></View>
+    <TextView
         android:id="@+id/tv_option4"
 
         android:gravity="center"

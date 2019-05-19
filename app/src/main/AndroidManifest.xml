@@ -14,12 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Leader_Board.Leaderboard_Activity"></activity>
+        <activity android:name=".Central_exam.Central_exam_landingpage"></activity>
+        <activity android:name=".Leader_Board.Leaderboard_Activity" />
         <activity android:name=".Select_edu.Choose_Qualification" />
         <activity android:name=".Register" />
         <activity
             android:name=".Dash_board"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".Main_category.Main_category" />
         <activity android:name=".Splash.Splash_screen">
             <intent-filter>
@@ -55,7 +56,9 @@
         <activity android:name=".Exams.Results_page" />
         <activity android:name=".Exams.List_quiz_subjects" />
         <activity android:name=".Splash.Login" />
-        <activity android:name=".Leader_Board.View_Toppers"></activity>
+        <activity android:name=".Leader_Board.View_Toppers" />
+        <activity android:name=".Central_exam.Central_questions"></activity>
+        <activity android:name=".Central_exam.List_Cquiz_subjects" />
     </application>
 
 </manifest>

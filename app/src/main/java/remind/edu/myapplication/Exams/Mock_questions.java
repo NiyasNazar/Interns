@@ -129,7 +129,7 @@ public class Mock_questions extends AppCompatActivity  {
                 Log.i("urlempty",url);
 
 
-                    AlertDialog.Builder alert = new AlertDialog.Builder(Mock_questions.this);
+                    AlertDialog.Builder alert = new AlertDialog.Builder(Central_questions.this);
                     alert.setTitle("");
                     // this is set the view from XML inside AlertDialog
                     alert.setView(alertLayout);

@@ -4,6 +4,8 @@ import com.google.gson.JsonObject;
 
 import remind.edu.myapplication.Add_mock_result.Response_add_result;
 import remind.edu.myapplication.Central_exam.Response_Centralqlist;
+import remind.edu.myapplication.Central_exam.Response_Cquiz_questions;
+import remind.edu.myapplication.Central_exam.Servertime.Response_servertime;
 import remind.edu.myapplication.Course_List.Response_sublist;
 import remind.edu.myapplication.Exams.Response_qlist;
 import remind.edu.myapplication.Exams.Response_quiz_questions;
@@ -56,6 +58,8 @@ public interface Apiservice {
 
     @GET ("exam_questions.php")
     Call<Response_quiz_questions>questions(@Query("exam_id") String examid);
+    @GET ("exam_questions.php")
+    Call<Response_Cquiz_questions>centralquestions(@Query("exam_id") String examid);
     @FormUrlEncoded
     @POST ("result_add.php")
     Call<Response_add_result>admockres(@Field("userid") String userid,
@@ -71,6 +75,7 @@ public interface Apiservice {
     @GET ("list_leaders.php?")
     Call<Response_leaders>listleaders(@Query("exam_id") String courseid, @Query("type")String type);
 
-
+    @GET ("servertime.php?")
+    Call<Response_servertime>getservertime();
 
 }

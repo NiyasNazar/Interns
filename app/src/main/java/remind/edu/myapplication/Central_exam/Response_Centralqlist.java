@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class Response_Centralqlist {
-    @SerializedName("centralExams")
+    @SerializedName("exams")
     @Expose
     private List<CentralExam> centralExams = null;
 

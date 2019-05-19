@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class CentralExam {
+
     @SerializedName("exam_id")
     @Expose
     private String examId;
@@ -103,4 +104,6 @@ public class CentralExam {
     public void setQuestionNo(String questionNo) {
         this.questionNo = questionNo;
     }
+
 }
+

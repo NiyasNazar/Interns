@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/lll"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_quizsubname"
+            android:textSize="19sp"
+            android:text="This is dummy text"
+            android:textColor="@color/colorblue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_qdetails"
+            android:layout_marginTop="3dp"
+            android:textSize="19sp"
+            android:text="This is dummy text"
+            android:textColor="@color/colorblue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:gravity="center"
+                android:id="@+id/tv_qnumber"
+                android:textColor="@color/colorblue"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_action_qicon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_marks"
+                android:textColor="@color/colorblue"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_action_qicontwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tv_times"
+                android:textColor="@color/colorblue"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_action_qiconthree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_examdate"
+                android:text="Exam On -"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/colorblue"
+            android:layout_width="match_parent"
+            android:layout_height="2px"></View>
+    </LinearLayout>
+
+</LinearLayout>
