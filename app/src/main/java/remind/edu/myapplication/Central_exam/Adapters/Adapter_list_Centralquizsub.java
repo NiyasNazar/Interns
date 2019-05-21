@@ -12,12 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import remind.edu.myapplication.Central_exam.CentralExam;
+
+import remind.edu.myapplication.Central_exam.CentralExam_landingpage;
 import remind.edu.myapplication.Central_exam.Central_questions;
 import remind.edu.myapplication.Central_exam.Servertime.Response_servertime;
 import remind.edu.myapplication.Exams.Exam;
@@ -69,7 +72,7 @@ qdetails.setTypeface(hintfont);
                     String time=courseList.get(pos).getTime();
                     String examstartdate=courseList.get(pos).getDate();
                     Log.i("examdate","ex"+examstartdate);
-                    getservertime(examstartdate);
+                    getservertime(examstartdate,id,time);
                     /*Intent is=new Intent(context, Central_questions.class);
                  is.putExtra("id",id);
                  is.putExtra("time",time);
@@ -112,7 +115,7 @@ qdetails.setTypeface(hintfont);
     public int getItemCount() {
         return courseList.size();
     }
-    public void getservertime(final String examstarddate){
+    public void getservertime(final String examstarddate, final String id, final String time){
         Apiservice apiservice= ApiClient.getClient().create(Apiservice.class);
         Call<Response_servertime> call=apiservice.getservertime();
         call.enqueue(new Callback<Response_servertime>() {
@@ -127,7 +130,7 @@ qdetails.setTypeface(hintfont);
                 Date d2 = null;
                 try {
                     Log.i("examdate","execjuting") ;
-                    d1 = format.parse(currenttime);
+                    d1 = format.parse("24/05/2019 10:20");
                     d2 = format.parse(examstarddate);
 
                     //in milliseconds
@@ -142,6 +145,41 @@ qdetails.setTypeface(hintfont);
                     Log.i("diffHours" , ""+diffHours);
                     Log.i("diffMinutes" , ""+ diffMinutes);
                     Log.i("diffSeconds", ""+  diffSeconds);
+                    String difdays= String.valueOf(diffDays);
+                    String difhrs= String.valueOf(diffHours);
+
+
+                    String a= String.valueOf(diffDays)+":"+diffHours+":"+diffMinutes;
+                    Log.i("times",""+a);
+                    if(d2.before(d1)){
+                        Toast.makeText(context, "Exam date is Over", Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+
+                    else
+                    if (difdays.equals("0")&&(difhrs.equals("0"))&&(diffMinutes<=10)){
+                        Log.i("times", "todayexam");
+
+                        if ((diffMinutes<=10)&&(diffMinutes>0)) {
+                            Log.i("times", "examclick");
+                            Intent is = new Intent(context, CentralExam_landingpage.class);
+                            is.putExtra("id", id);
+                            is.putExtra("time", time);
+                            is.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(is);
+                        }else{
+                            Toast.makeText(context, "Exam date is Over", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }else {
+                     Toast.makeText(context, "You cannot enroll exam now", Toast.LENGTH_SHORT).show();
+
+
+                    }
+
+
 
                 } catch (Exception e) {
                     e.printStackTrace();
